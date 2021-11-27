@@ -68,7 +68,7 @@
                                    Tambah Data Author
                                </div>
                                <form action="{{ route('author.store') }}" method = "post">
-                                   @csrf
+                                   @csrf  <!-- Melindungi data -->
                                    <div class = "panel-body">
                                    <label>Nama</label>
                                    <input type="text" class="form-control" name="name">

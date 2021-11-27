@@ -56,7 +56,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Author</h1>
+                            <h1 class="page-header">Book</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -65,18 +65,28 @@
                        <div class = "col-lg-12">
                            <div class = "panel panel-default">
                                <div class = "panel-heading">
-                                   Edit Data Author
+                                   Tambah Data Book
                                </div>
-                               <form action="{{ route('author.update', $author->id) }}" method = "post">
+                               <form action="{{ route('book.store') }}" method="post" enctype="multipart/form-data">
                                    @csrf  <!-- Melindungi data -->
-                                   @method('put')
                                    <div class = "panel-body">
-                                   <label>Nama</label>
-                                   <input type="text" class="form-control" name="name" value="{{$author->name}}">
+                                   <label>Title</label>
+                                   <input type="text" class="form-control" name="title">
+                                   <label>Author Id</label>
+                                   <select name="author_id" class="form-control">
+                                       @foreach($author as $data)
+                                       <option value="{{$data->id}}">{{$data->name}}</option>
+                                       @endforeach
+                                   </select>
+                                   <label>Amount</label>
+                                   <input type="text" class="form-control" name="amount">
+                                   <label>Cover</label>
+                                   <input type="file" class="form-control" name="cover">
                                    </div>
+
                                    <div class = "panel-body">
                                        <button type = "reset" class = "btn btn-warning">Reset</button>
-                                       <button type = "submit" class = "btn btn-primary">Ubah</button>
+                                       <button type = "submit" class = "btn btn-primary">Tambah</button>
                                    </div>
                                </form>
                            </div>

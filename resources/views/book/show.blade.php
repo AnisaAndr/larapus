@@ -56,7 +56,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Author</h1>
+                            <h1 class="page-header">Book</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -65,19 +65,22 @@
                        <div class = "col-lg-12">
                            <div class = "panel panel-default">
                                <div class = "panel-heading">
-                                   Edit Data Author
+                                   Tampil Data Book
                                </div>
-                               <form action="{{ route('author.update', $author->id) }}" method = "post">
-                                   @csrf  <!-- Melindungi data -->
+                               <form action="" method = "post">
+                                   @csrf
                                    @method('put')
                                    <div class = "panel-body">
-                                   <label>Nama</label>
-                                   <input type="text" class="form-control" name="name" value="{{$author->name}}">
+                                   <label>Title</label>
+                                   <input type="text" class="form-control" name="title" value="{{$book->title}}" disabled>
+                                   <label>Author Id</label>
+                                   <input type="text" class="form-control" name="author_id" value="{{$book->author_id}}" disabled>
+                                   <label>Amount</label>
+                                   <input type="text" class="form-control" name="amount" value="{{$book->amount}}" disabled>
+                                   <label>Cover</label>
+                                   <input type="text" class="form-control" name="cover" value="{{$book->cover}}" disabled>
                                    </div>
-                                   <div class = "panel-body">
-                                       <button type = "reset" class = "btn btn-warning">Reset</button>
-                                       <button type = "submit" class = "btn btn-primary">Ubah</button>
-                                   </div>
+                                   
                                </form>
                            </div>
                        </div>

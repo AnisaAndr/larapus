@@ -19,6 +19,9 @@
                             <li>
                                 <a href="tables.html"><i class="fa fa-table fa-fw"></i>Author</a>
                             </li>
+                            <li>
+                                <a href="tables.html"><i class="fa fa-table fa-fw"></i>Book</a>
+                            </li>
                             
                                 
                                 <!-- /.nav-second-level -->
